@@ -51,7 +51,7 @@ public class BSTSet<KeyType extends Comparable<KeyType>> implements MathSet<KeyT
 
         //already exists
         //else x.key = key;  //already exists
-        //x.n = size(x.left) + size(x.right) + 1;
+        x.n = size(x.left) + size(x.right) + 1;
         return x;
     }
 
@@ -157,11 +157,12 @@ public class BSTSet<KeyType extends Comparable<KeyType>> implements MathSet<KeyT
      */
     @Override
     public MathSet<KeyType> difference(MathSet<KeyType> other) {
-        // create an empty set that will hodl the result
+        // create an empty set that will hold the result
         MathSet<KeyType> result = new BSTSet<KeyType>();
 
         //iterate through all items in this
-        Iterator<KeyType> itr = (Iterator<KeyType>) this.keys();
+        Iterable<KeyType> keys = this.keys();
+        Iterator<KeyType> itr = keys.iterator();
         while (itr.hasNext()){
             KeyType currentKey = itr.next();
             if(!other.contains(currentKey)){
