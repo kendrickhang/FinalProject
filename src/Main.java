@@ -1,5 +1,6 @@
 import edu.greenriver.sdev333.BSTSet;
 import edu.greenriver.sdev333.MathSet;
+import edu.greenriver.sdev333.SeparateChainingHashSet;
 
 import java.util.Iterator;
 
@@ -10,6 +11,31 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class Main {
     public static void main(String[] args) {
+
+            MathSet<String> hs = new SeparateChainingHashSet<>();
+            hs.add("one");
+            hs.add("two");
+            hs.add("three");
+            hs.add("four");
+            hs.add("five");
+            hs.add("six");
+            hs.add("seven");
+            System.out.println("Set 1: " + hs);
+            MathSet<String> hs2 = new SeparateChainingHashSet<>();
+            hs2.add("five");
+            hs2.add("six");
+            hs2.add("seven");
+            hs2.add("eight");
+            hs2.add("nine");
+            hs2.add("ten");
+            hs2.add("eleven");
+            System.out.println("Set 2: " + hs2);
+            System.out.println("Union: " + hs.union(hs2));
+            System.out.println("1 diff 2: " + hs.difference(hs2));
+            System.out.println("Intersection: " + hs.intersection(hs2));
+
+            //other methods are required to work for the Set methods, tested above, to work
+
 
             MathSet<String> set = new BSTSet<>();
             set.add("one");
