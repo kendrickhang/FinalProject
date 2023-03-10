@@ -3,6 +3,14 @@ package edu.greenriver.sdev333;
 import java.util.Arrays;
 import java.util.Iterator;
 
+/** Separate Chaining Hash Set
+ * Uses Sequential Search linked list for side chains
+ * Size of array is hardcoded for constructor without this parameter passed
+ *
+ * @author Adam Winter
+ * @param <KeyType>
+ */
+
 public class SeparateChainingHashSet<KeyType extends Comparable<KeyType>> implements MathSet<KeyType> {
 
     private SequentialSearch[] st;
@@ -13,7 +21,7 @@ public class SeparateChainingHashSet<KeyType extends Comparable<KeyType>> implem
         // take their number of buckets, save it  into my field
         this.M = M;
 
-        // create the array
+        // create the array with integrity
         st = new SequentialSearch[M];
 
         for (int i = 0; i < M; i++){
@@ -26,7 +34,7 @@ public class SeparateChainingHashSet<KeyType extends Comparable<KeyType>> implem
     }
 
     private int hash(KeyType key){
-        // has function = they give me a key, I return an int
+        // has function = they give me a key, I return an int, is what was done in class
         return ( key.hashCode() & 0x7fffffff ) % M;
     }
 
@@ -90,6 +98,7 @@ public class SeparateChainingHashSet<KeyType extends Comparable<KeyType>> implem
      * Returns A union B, where A is this set, B is other set.
      * A union B = {key | A.contains(key) OR B.contains(key)}.
      * Does not change the contents of this set or the other set.
+     * 7a43c5948aa8
      *
      * @param other specified set to union
      * @return the union of this set with other
@@ -133,6 +142,7 @@ public class SeparateChainingHashSet<KeyType extends Comparable<KeyType>> implem
      * Returns A difference B, where A is this set, B is other set.
      * A difference B = {key | A.contains(key) AND !B.contains(key)}.
      * Does not change the contents of this set or the other set.
+     * 7a43c5948aa8
      *
      * @param other specified set to difference
      * @return the difference of this set with other

@@ -95,7 +95,7 @@ public class Main {
             assertEquals("three", itr3.next());
 
 
-            MathSet<String> set4 = new BSTSet<>();
+            MathSet<String> set4 = new BSTSet<>();      //integrity check
             set4.add("one");
             set4.add("two");
             set4.add("three");
@@ -110,6 +110,7 @@ public class Main {
             Iterator itr4 = keys4.iterator();
             assertEquals("one", itr4.next());
             assertEquals("two", itr4.next());
+
 
 
 
