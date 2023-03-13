@@ -11,7 +11,7 @@ import java.util.Iterator;
  * @param <KeyType>
  */
 
-public class SeparateChainingHashSet<KeyType extends Comparable<KeyType>> implements MathSet<KeyType> {
+public class SeparateChainingHashSet<KeyType> implements MathSet<KeyType> {
 
     private SequentialSearch[] st;
 
